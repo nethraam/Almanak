@@ -1,0 +1,189 @@
+/*
+#    Almanak is en php and MySql based calendar to use on a web server or to incorporate in a website
+#    Copyright (C) <2021>  <Maarten Verest>
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+*/
+
+.toggleMenu {
+    display:  none;
+    background: #d9534f;   
+    color: #fff;
+	width:100%;
+	
+}
+.toggleMenu span {
+	display:block; 
+	padding: 10px 15px; 
+	font-family: 'Concert One';
+	text-decoration: none;
+	font-size: 18px;
+	width: 100%;
+}
+
+.nav {
+	list-style: none;
+    background:none;
+	margin: 0; padding: 0;
+	/* height: 50px;	  */
+}
+
+.nav:before,
+.nav:after {
+    content: " "; 
+    display: table; 
+}
+.nav:after {
+    clear: both;
+}
+.nav ul {
+    list-style: none;
+    width: 14em;
+	margin: 0; padding: 0;
+	background-color: #none;
+ 
+}
+.nav a {
+    padding: 4px 4px;
+    color:#333;
+	font-family: 'raleway';
+	text-decoration: none;
+	font-size: 14px;
+	font-weight: 700;
+}
+
+.nav a.menu-current, .nav a.menu-parent {  background: #cccccc;  color: #000; }
+
+
+.nav li {
+    position: relative;
+	margin: 0; padding: 0;
+	border: 1px solid gray;
+	/* border-right: 2px solid #fff; */
+	/* border-bottom: 2px; */
+	margin-right: 2px;
+	background: #e8ffe8;	
+	border-radius: 10px 10px 0px 0px; 
+}
+
+.active {
+	border-bottom: 2px solid #e8ffe8 !important;	
+}
+
+.nav li li {
+	border-right: none;
+	z-index:2000;
+	}
+
+.nav > li {
+    float: left;
+}
+.nav > li > .parent {
+    /* background-image: url("images/downArrow.png"); */
+    background-repeat: no-repeat;
+    background-position: right;
+	padding-right: 20px;	
+}
+.nav > li > a {
+    display: block;
+	padding: 4px 8px;
+}
+.nav li  ul {
+    position: absolute;
+    left: -9999px;
+	display: none;
+	background: #fff;
+	z-index:1000;
+}
+.nav > li.hover > ul {
+    left: 0;  display: block; background: #fff;
+}
+.nav li li.hover ul {
+    left: 100%;
+	display: block;
+    top: 0;
+	background: #fff;
+}
+.nav li a:hover {  
+	color: #ffffff;
+	background: #d9534f;	
+	border-radius: 10px 10px 0px 0px; 
+}
+
+
+.nav li li a {
+    display: block; 
+    background: #d9534f;
+    position: relative;
+    z-index:1000;
+    border-top: 1px solid #1c497c;
+	font-family: 'raleway';
+	font-size: 20px;
+	text-decoration: none;
+}
+.nav li li li a {
+    background:#1c497c;
+    z-index:200;
+    border-top: 1px solid #fff;
+}
+
+@media screen and (max-width: 767px) {
+
+	
+    .active {
+		border-bottom: 0px !important;
+    }
+	.nav a {
+		font-family: 'concert one';
+		text-decoration: none;
+		font-size: 18px;
+		font-weight: 400;
+		color: #ffffff;
+		padding: 10px 15px;
+	}
+	
+    .nav > li {
+        float: none;
+		border-right: none;
+		background: #d9534f;
+		border-radius: 0px 0px 0px 0px; 
+		border: 0px;
+		padding: 10px 10px;
+    }
+    .nav > li > .parent {
+        background-position: 95% 50%;
+    }
+    .nav li li .parent {
+        /* background-image: url("images/downArrow.png"); */
+        background-repeat: no-repeat;
+        background-position: right 50%;
+    }
+	.nav li li a {
+		background-color: #d9534f;
+		font-family: 'concert one';
+		text-decoration: none;
+		font-size: 16px;
+		padding-left: 35px;
+		border-top: 0px solid #d9534f;
+	}
+	
+    .nav ul {
+        display: block;
+        width: 100%;
+    }
+   .nav > li.hover > ul , .nav li li.hover ul {
+       position: static;
+    }
+}	
+	/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
